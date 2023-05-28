@@ -1,0 +1,37 @@
+﻿@inherits LayoutComponentBase
+
+<MApp>
+    <MAppBar App>
+        <MAppBarNavIcon @onclick="() => _drawer = !_drawer"></MAppBarNavIcon>
+        <MToolbarTitle>LiberalChat desktop</MToolbarTitle>
+        <MSpacer></MSpacer>
+        <MButton Text Color="primary" Target="_blank" Href="https://github.com/LibertyChat">About</MButton>
+    </MAppBar>
+
+    <MNavigationDrawer App @bind-Value="_drawer">
+        <MList Nav Routable>
+            <MListItem Href="/" ActiveClass="primary--text">
+                <MListItemIcon>
+                    <MIcon>mdi-home</MIcon>
+                </MListItemIcon>
+                <MListItemContent>
+                    <MListItemTitle>主页</MListItemTitle>
+                </MListItemContent>
+            </MListItem>
+        </MList>
+    </MNavigationDrawer>
+
+    <MMain>
+        <MContainer Fluid>
+            <MErrorHandler>
+                @Body
+            </MErrorHandler>
+        </MContainer>
+    </MMain>
+</MApp>
+
+@code {
+
+    private bool _drawer;
+
+}
