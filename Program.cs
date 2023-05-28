@@ -1,4 +1,5 @@
-﻿using LiberalChat_desktop;
+﻿using BlazorComponent;
+using LiberalChat_desktop;
 using Microsoft.Extensions.DependencyInjection;
 using Photino.Blazor;
 
@@ -15,7 +16,7 @@ internal class Program
         var app = appBuilder.Build();
 
         app.MainWindow
-            .SetTitle("Photino Blazor Sample");
+            .SetTitle("LiberalChat desktop");
 
         AppDomain.CurrentDomain.UnhandledException += (sender, error) =>
         {
