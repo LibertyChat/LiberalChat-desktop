@@ -10,8 +10,8 @@ namespace LiberalChat_desktop.src.data
         private string DefaultDBFilePath = "~/LiberalChatData/data.db";
         private string TestDBFilePath = "data.db";
 
-        private static LoggerFactory? loggerFactory=null;
-        private ErrorMessage.ErrorMessage? logger = new ErrorMessage.ErrorMessage(loggerFactory);
+        private static readonly LoggerFactory loggerFactory;
+        private readonly ErrorMessage.ErrorMessage logger = new(loggerFactory);
 
         public void NewDBFile(string DBPath)
         {
