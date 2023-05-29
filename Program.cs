@@ -2,6 +2,8 @@
 using LiberalChat_desktop;
 using Microsoft.Extensions.DependencyInjection;
 using Photino.Blazor;
+using Microsoft.Extensions.Logging;
+using LiberalChat_desktop.src.data;
 
 internal class Program
 {
