@@ -1,8 +1,56 @@
 @page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Message</PageTitle>
 
-<h1>Hello, world!</h1>
+<MCard
+    Class="mt-0 mb-0 ml-0 pt-0 pb-0 pl-0 rounded-0 elevation-0"
+    MaxWidth="300"
+    >
+    <MToolbar
+        Color="#F57C00"
+        Dark>
 
-Welcome to your new app.
+        <MToolbarTitle>¡ƒÃÏ¡–±Ì</MToolbarTitle>
+        <MSpacer></MSpacer>
+
+        <MButton Icon>
+            <MIcon>mdi-magnify</MIcon>
+        </MButton>
+    </MToolbar>
+
+    <MList Subheader>
+        @foreach (var chat in recent)
+        {
+                <MListItem Link>
+                    <MListItemAvatar>
+                        <MImage
+                            alt="@($"{chat.title} avatar")"
+                            Src="@chat.avatar">
+                        </MImage>
+                    </MListItemAvatar>
+
+                    <MListItemContent>
+                        <MListItemTitle>@chat.title</MListItemTitle>
+                    </MListItemContent>
+                </MListItem>
+        }
+    </MList>
+    <MDivider></MDivider>
+</MCard>
+
+@code {
+
+    List<(bool active, string avatar, string title)> recent = new List<(bool active, string avatar, string title)>()
+    {
+        new(true, "https://cdn.masastack.com/stack/images/website/masa-blazor/lists/1.png", "Jason Oner"),
+        new(true, "https://cdn.masastack.com/stack/images/website/masa-blazor/lists/2.png", "Mike Carlson"),
+        new(false, "https://cdn.masastack.com/stack/images/website/masa-blazor/lists/3.png", "Cindy Baker"),
+    };
+
+    List<(string title, string avatar)> previous = new List<(string title, string avatar)>()
+    {
+        new("Travis Howard", "https://cdn.masastack.com/stack/images/website/masa-blazor/lists/5.png")
+    };
+
+}
 

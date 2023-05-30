@@ -3,15 +3,36 @@
 @inject I18n I18n
 
 <MApp>
-    <MAppBar App>
+	<MAppBar App>
         <MAppBarNavIcon @onclick="() => _drawer = !_drawer"></MAppBarNavIcon>
         <MToolbarTitle>LiberalChat desktop</MToolbarTitle>
         <MSpacer></MSpacer>
         <MButton Text Color="primary" Target="_blank" Href="https://github.com/LibertyChat">About</MButton>
-    </MAppBar>
+	</MAppBar>
 
-    <MNavigationDrawer App @bind-Value="_drawer">
-        <MList Nav Routable>
+	<MNavigationDrawer App @bind-Value="_drawer">
+		<MList Nav Routable>
+            <MList>
+            <MListItem>
+                <MListItemAvatar>
+                    <MImage Src="https://cdn.masastack.com/stack/images/website/masa-blazor/jack.png"></MImage>
+                </MListItemAvatar>
+            </MListItem>
+            <MListItem Link>
+                <MListItemContent>
+                    <MListItemTitle class="text-h6">
+                        请登录
+                    </MListItemTitle>
+                    <MListItemSubtitle>请登录</MListItemSubtitle>
+                </MListItemContent>
+
+               <MListItemAction>
+                    <MIcon>mdi-plus</MIcon>
+                    </MListItemAction>
+            </MListItem>
+            </MList>
+            <MDivider></MDivider>
+
             <MListItem Href="/" ActiveClass="primary--text">
                 <MListItemIcon>
                     <MIcon>mdi-message</MIcon>
@@ -66,6 +87,6 @@
 
 @code {
 
-    private bool _drawer;
+	private bool _drawer;
 
 }
